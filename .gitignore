@@ -5,8 +5,8 @@ e2e/**/*.js
 e2e/**/*.js.map
 src/**/*.js
 src/**/*.map
-aot/*
-dist/*
+aot/**/*
+dist/**/*
 _test-output
 _temp
 
