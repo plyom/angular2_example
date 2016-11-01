@@ -4,7 +4,7 @@
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
-    "build:aot": "ngc -p tsconfig-aot.json && rollup -c rollup-config.js",
+    "build:aot": "node config/copy-dist-files.js && ngc -p tsconfig-aot.json && rollup -c config/rollup-config.js",
     "lite:aot": "lite-server -c aot/bs-config.json",
     "tsc": "tsc",
     "tsc:w": "tsc -w"

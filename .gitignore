@@ -16,9 +16,6 @@ _temp
 
 !karma*.js
 !protractor*.js
-!*config*.js
-!wallaby.js
-!copy-dist-files.js
+!config/**/*
 !aot/index.html
-!aot/shim.min.js
-!aot/zone.min.js
+!aot/bs-config.json
