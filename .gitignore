@@ -1,8 +1,6 @@
 .idea
 node_modules
 **/*npm-debug.log.*
-*.js
-*.js.map
 e2e/**/*.js
 e2e/**/*.js.map
 src/**/*.js
@@ -12,7 +10,6 @@ dist/*
 _test-output
 _temp
 
-!config/*.js
 !protractor*.js
 !aot/index.html
 !aot/bs-config.json
