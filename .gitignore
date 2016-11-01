@@ -7,10 +7,18 @@ link-checker-results.txt
 *.js.map
 e2e/**/*.js
 e2e/**/*.js.map
+app/**/*.js
+app/**/*.map
+aot/*
+dist/*
 _test-output
 _temp
 
 !karma*.js
 !protractor*.js
-!systemjs.config.js
+!*config*.js
 !wallaby.js
+!copy-dist-files.js
+!aot/index.html
+!aot/shim.min.js
+!aot/zone.min.js
