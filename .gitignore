@@ -1,6 +1,5 @@
-!karma*.js
 !protractor*.js
-!config/**/*
+!config/*
 !aot/index.html
 !aot/bs-config.json
 
