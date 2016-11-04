@@ -14,13 +14,11 @@ module.exports = function(config) {
         plugins: [
             require('karma-jasmine'),
             require('karma-chrome-launcher'),
-            require('karma-jasmine-html-reporter'), // click "Debug" in browser to see it
-            require('karma-htmlfile-reporter') // crashing w/ strange socket error
+            require('karma-jasmine-html-reporter'),
+            require('karma-htmlfile-reporter')
         ],
 
         customLaunchers: {
-            // From the CLI. Not used here but interesting
-            // chrome setup for travis CI using chromium
             Chrome_travis_ci: {
                 base: 'Chrome',
                 flags: ['--no-sandbox']
@@ -75,10 +73,7 @@ module.exports = function(config) {
                 included: false,
                 watched: false
             },
-            'karma-test-shim.js',
-
-            // transpiled application & spec code paths loaded via module imports
-            {
+            'karma-test-shim.js', {
                 pattern: appBase + '**/*.js',
                 included: false,
                 watched: true
@@ -86,12 +81,7 @@ module.exports = function(config) {
                 pattern: testBase + '**/*.js',
                 included: false,
                 watched: true
-            },
-
-
-            // Asset (HTML & CSS) paths loaded via Angular's component compiler
-            // (these paths need to be rewritten, see proxies section)
-            {
+            }, {
                 pattern: appBase + '**/*.html',
                 included: false,
                 watched: true
@@ -99,10 +89,7 @@ module.exports = function(config) {
                 pattern: appBase + '**/*.css',
                 included: false,
                 watched: true
-            },
-
-            // Paths for debugging with source maps in dev tools
-            {
+            }, {
                 pattern: appSrcBase + '**/*.ts',
                 included: false,
                 watched: false
@@ -120,17 +107,13 @@ module.exports = function(config) {
                 watched: false
             }
         ],
-
-        // Proxied base paths for loading assets
         proxies: {
-            // required for component assets fetched by Angular's compiler
             "/src/": appAssets
         },
 
         exclude: [],
         preprocessors: {},
-        // disabled HtmlReporter; suddenly crashing w/ strange socket error
-        reporters: ['progress', 'kjhtml'], //'html'],
+        reporters: ['progress', 'kjhtml'],
 
         // HtmlReporter configuration
         htmlReporter: {
