@@ -1,12 +1,12 @@
 // #docregion
 module.exports = function(config) {
 
-    var appBase = '../src/'; // transpiled app JS and map files
-    var appSrcBase = '../src/'; // app source TS files
-    var appAssets = '../base/app/'; // component assets fetched by Angular's compiler
+    var appBase = 'src/'; // transpiled app JS and map files
+    var appSrcBase = 'src/'; // app source TS files
+    var appAssets = 'base/src/'; // component assets fetched by Angular's compiler
 
-    var testBase = '../testing/'; // transpiled test JS and map files
-    var testSrcBase = '../testing/'; // test source TS files
+    var testBase = 'testing/'; // transpiled test JS and map files
+    var testSrcBase = 'testing/'; // test source TS files
 
     config.set({
         basePath: '',
@@ -28,28 +28,28 @@ module.exports = function(config) {
         },
         files: [
             // System.js for module loading
-            '../node_modules/systemjs/dist/system.src.js',
+            'node_modules/systemjs/dist/system.src.js',
 
             // Polyfills
-            '../node_modules/core-js/client/shim.js',
-            '../node_modules/reflect-metadata/Reflect.js',
+            'node_modules/core-js/client/shim.js',
+            'node_modules/reflect-metadata/Reflect.js',
 
             // zone.js
-            '../node_modules/zone.js/dist/zone.js',
-            '../node_modules/zone.js/dist/long-stack-trace-zone.js',
-            '../node_modules/zone.js/dist/proxy.js',
-            '../node_modules/zone.js/dist/sync-test.js',
-            '../node_modules/zone.js/dist/jasmine-patch.js',
-            '../node_modules/zone.js/dist/async-test.js',
-            '../node_modules/zone.js/dist/fake-async-test.js',
+            'node_modules/zone.js/dist/zone.js',
+            'node_modules/zone.js/dist/long-stack-trace-zone.js',
+            'node_modules/zone.js/dist/proxy.js',
+            'node_modules/zone.js/dist/sync-test.js',
+            'node_modules/zone.js/dist/jasmine-patch.js',
+            'node_modules/zone.js/dist/async-test.js',
+            'node_modules/zone.js/dist/fake-async-test.js',
 
             // RxJs
             {
-                pattern: '../node_modules/rxjs/**/*.js',
+                pattern: 'node_modules/rxjs/**/*.js',
                 included: false,
                 watched: false
             }, {
-                pattern: '../node_modules/rxjs/**/*.js.map',
+                pattern: 'node_modules/rxjs/**/*.js.map',
                 included: false,
                 watched: false
             },
@@ -57,11 +57,11 @@ module.exports = function(config) {
             // Paths loaded via module imports:
             // Angular itself
             {
-                pattern: '../node_modules/@angular/**/*.js',
+                pattern: 'node_modules/@angular/**/*.js',
                 included: false,
                 watched: false
             }, {
-                pattern: '../node_modules/@angular/**/*.js.map',
+                pattern: 'node_modules/@angular/**/*.js.map',
                 included: false,
                 watched: false
             },
@@ -124,7 +124,7 @@ module.exports = function(config) {
         // Proxied base paths for loading assets
         proxies: {
             // required for component assets fetched by Angular's compiler
-            "/app/": appAssets
+            "/src/": appAssets
         },
 
         exclude: [],
@@ -135,7 +135,7 @@ module.exports = function(config) {
         // HtmlReporter configuration
         htmlReporter: {
             // Open this file to see results in browser
-            outputFile: '../_test-output/tests.html',
+            outputFile: '_test-output/tests.html',
 
             // Optional
             pageTitle: 'Unit Tests',

@@ -7,7 +7,7 @@ Error.stackTraceLimit = 0; // "No stacktrace"" is usually best for app testing.
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
-var builtPath = '/base/app/';
+var builtPath = '/base/src/';
 
 __karma__.loaded = function() {};
 
@@ -29,6 +29,7 @@ var allSpecFiles = Object.keys(window.__karma__.files)
 
 System.config({
     baseURL: 'base',
+    // m
     // Extend usual application package list with test folder
     packages: {
         'testing': {
