@@ -2,7 +2,7 @@
   "name": "plyom-patterns-angular2",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "tsc && concurrently \"tsc -w\" \"gulp --gulpfile config/gulpfile.js\" \"lite-server\" ",
     "lite": "lite-server",
     "build:aot": "node config/copy-dist-files.js && ngc -p tsconfig-aot.json && rollup -c config/rollup-config.js",
     "lite:aot": "lite-server -c aot/bs-config.json",
@@ -38,7 +38,9 @@
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.46",
     "concurrently": "^3.0.0",
+    "gulp-minify-css": "^1.2.4",
     "lite-server": "^2.2.2",
+    "node-sass": "^3.11.1",
     "rollup": "^0.36.3",
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-node-resolve": "^2.0.0",

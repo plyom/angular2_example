@@ -4,9 +4,11 @@ node_modules
 e2e/**/*.js
 e2e/**/*.js.map
 src/**/*.js
+src/**/*.css
 src/**/*.map
 aot/**/*
 dist/**/*
+*.log
 _test-output
 _temp
 
